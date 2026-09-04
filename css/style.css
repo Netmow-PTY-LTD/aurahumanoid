@@ -386,6 +386,7 @@ ul {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
+    animation: float 6s ease-in-out infinite;
 }
 
 .image-mockup::after {
@@ -397,9 +398,9 @@ ul {
     pointer-events: none;
 }
 
-.floating-animation {
+/* .floating-animation {
     animation: float 6s ease-in-out infinite;
-}
+} */
 
 @keyframes float {
     0% {
@@ -776,7 +777,8 @@ textarea:focus {
 /* --- Scroll to Top Button --- */
 .scroll-to-top {
     position: fixed;
-    bottom: 6.5rem; /* Positioned above WhatsApp button */
+    bottom: 6.5rem;
+    /* Positioned above WhatsApp button */
     right: 2rem;
     background-color: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -903,6 +905,7 @@ textarea:focus {
 
 /* --- NAV COLLAPSE: 1199px and below --- */
 @media (max-width: 1199px) {
+
     /* Hide desktop nav links & CTA button */
     .nav-links {
         display: none;
