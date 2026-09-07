@@ -1,0 +1,1236 @@
+{
+    "version": "0.4",
+    "title": "Aura Humanoid Native Editable",
+    "type": "page",
+    "content": [
+        {
+            "id": "be825dd",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "0259c36",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "4304a64",
+                            "elType": "widget",
+                            "widgetType": "html",
+                            "settings": {
+                                "html": "<style>/* --- CSS Variables --- */\n:root {\n    --matte-black: #080a0f;\n    --dark-slate: #131722;\n    --deep-navy: #0b1120;\n    --cyber-silver: #d1d5db;\n    --electric-blue: #2563eb;\n    --cyan-neon: #00f0ff;\n    --cyan-glow: rgba(0, 240, 255, 0.3);\n\n    --text-light: #f8fafc;\n    --text-muted: #94a3b8;\n\n    --glass-bg: rgba(19, 23, 34, 0.65);\n    --glass-border: rgba(255, 255, 255, 0.08);\n    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);\n\n    --font-sans: 'Inter', sans-serif;\n    --font-heading: 'Outfit', sans-serif;\n\n    --transition-fast: 0.2s ease;\n    --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);\n}\n\n/* --- Resets & Base Styles --- */\n*,\n*::before,\n*::after {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n}\n\nhtml {\n    scroll-behavior: smooth;\n}\n\nbody {\n    font-family: var(--font-sans);\n    background-color: var(--matte-black);\n    color: var(--text-light);\n    line-height: 1.6;\n    overflow-x: hidden;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    font-family: var(--font-heading);\n    font-weight: 700;\n    line-height: 1.2;\n    margin-bottom: 1rem;\n}\n\na {\n    color: inherit;\n    text-decoration: none;\n    transition: var(--transition-fast);\n}\n\nimg {\n    max-width: 100%;\n    display: block;\n}\n\nul {\n    list-style: none;\n}\n\n/* --- Typography Utilities --- */\n.highlight-cyan {\n    color: var(--cyan-neon);\n    text-shadow: 0 0 15px var(--cyan-glow);\n}\n\n.text-center {\n    text-align: center;\n}\n\n.text-gray {\n    color: var(--text-muted);\n}\n\n.text-sm {\n    font-size: 0.875rem;\n}\n\n.mb-2 {\n    margin-bottom: 0.5rem;\n}\n\n.mb-4 {\n    margin-bottom: 1rem;\n}\n\n.mt-2 {\n    margin-top: 0.5rem;\n}\n\n.mt-3 {\n    margin-top: 0.75rem;\n}\n\n.mt-4 {\n    margin-top: 1rem;\n}\n\n.mt-5 {\n    margin-top: 3rem;\n}\n\n.section-padding {\n    padding: 6rem 0;\n}\n\n.bg-darker {\n    background-color: var(--deep-navy);\n}\n\n/* --- Layout --- */\n.container {\n    width: 90%;\n    max-width: 1200px;\n    margin: 0 auto;\n}\n\n/* --- Components --- */\n.btn {\n    display: inline-block;\n    padding: 0.75rem 1.5rem;\n    border-radius: 6px;\n    font-family: var(--font-heading);\n    font-weight: 500;\n    font-size: 0.875rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    cursor: pointer;\n    transition: var(--transition-smooth);\n    border: 1px solid transparent;\n}\n\n.btn-primary {\n    background-color: var(--electric-blue);\n    color: white;\n    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);\n}\n\n.btn-primary:hover {\n    background-color: #1d4ed8;\n    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);\n    transform: translateY(-2px);\n}\n\n.btn-secondary {\n    background: transparent;\n    color: var(--text-light);\n    border-color: var(--glass-border);\n}\n\n.btn-secondary:hover {\n    background: rgba(255, 255, 255, 0.05);\n    border-color: var(--cyber-silver);\n}\n\n.w-100 {\n    width: 100%;\n}\n\n.glass-panel {\n    background: var(--glass-bg);\n    backdrop-filter: blur(12px);\n    -webkit-backdrop-filter: blur(12px);\n    border: 1px solid var(--glass-border);\n    box-shadow: var(--glass-shadow);\n    border-radius: 8px;\n    padding: 2rem;\n    transition: var(--transition-smooth);\n}\n\n.glass-panel:hover {\n    border-color: rgba(0, 240, 255, 0.2);\n    transform: translateY(-5px);\n}\n\n.badge {\n    display: inline-block;\n    font-size: 0.75rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    padding: 0.4em 0.8em;\n    background: rgba(37, 99, 235, 0.1);\n    color: var(--cyan-neon);\n    border: 1px solid rgba(0, 240, 255, 0.2);\n    border-radius: 100px;\n    margin-bottom: 1rem;\n}\n\n/* --- Section Headers --- */\n.section-header {\n    margin-bottom: 4rem;\n}\n\n.section-header.center {\n    text-align: center;\n    max-width: 700px;\n    margin: 0 auto 4rem;\n}\n\n.section-title {\n    font-size: 2.5rem;\n    margin-bottom: 1rem;\n}\n\n.section-desc {\n    color: var(--text-muted);\n    font-size: 1.125rem;\n}\n\n/* --- Navbar --- */\n.navbar {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    z-index: 1000;\n    padding: 1.5rem 0;\n    transition: var(--transition-smooth);\n}\n\n.navbar.scrolled {\n    padding: 1rem 0;\n    background: var(--glass-bg);\n    backdrop-filter: blur(12px);\n    border-bottom: 1px solid var(--glass-border);\n}\n\n.nav-container {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.logo a {\n    font-family: var(--font-heading);\n    font-size: 1.5rem;\n    font-weight: 800;\n    letter-spacing: -0.02em;\n}\n\n.logo span {\n    color: var(--cyan-neon);\n    font-weight: 500;\n}\n\n.nav-links {\n    display: flex;\n    gap: 2rem;\n}\n\n.nav-links a {\n    font-size: 0.9rem;\n    font-weight: 500;\n    color: var(--cyber-silver);\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n    position: relative;\n}\n\n.nav-links a::after {\n    content: '';\n    position: absolute;\n    bottom: -4px;\n    left: 0;\n    width: 0;\n    height: 2px;\n    background: var(--cyan-neon);\n    transition: var(--transition-fast);\n}\n\n.nav-links a:hover {\n    color: var(--text-light);\n}\n\n.nav-links a:hover::after {\n    width: 100%;\n}\n\n.mobile-menu-toggle {\n    display: none;\n    flex-direction: column;\n    gap: 6px;\n    cursor: pointer;\n}\n\n.mobile-menu-toggle span {\n    display: block;\n    width: 25px;\n    height: 2px;\n    background: var(--text-light);\n    transition: var(--transition-fast);\n}\n\n/* --- Hero Section --- */\n.hero {\n    position: relative;\n    min-height: 100vh;\n    display: flex;\n    align-items: center;\n    padding-top: 5rem;\n    overflow: hidden;\n}\n\n.hero-bg {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    z-index: -1;\n    background: radial-gradient(circle at 50% 50%, var(--dark-slate) 0%, var(--matte-black) 100%);\n}\n\n.grid-overlay {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-image:\n        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),\n        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);\n    background-size: 40px 40px;\n    opacity: 0.5;\n}\n\n.glow-effect {\n    position: absolute;\n    width: 40vw;\n    height: 40vw;\n    border-radius: 50%;\n    filter: blur(100px);\n    opacity: 0.15;\n}\n\n.glow-effect.top-left {\n    top: -10vw;\n    left: -10vw;\n    background: var(--electric-blue);\n}\n\n.glow-effect.bottom-right {\n    bottom: -10vw;\n    right: -10vw;\n    background: var(--cyan-neon);\n}\n\n.hero-container {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 4rem;\n    align-items: center;\n}\n\n.hero-title {\n    font-size: 3.5rem;\n    line-height: 1.1;\n    margin-bottom: 1.5rem;\n}\n\n.hero-subtitle {\n    font-size: 1.25rem;\n    color: var(--text-muted);\n    margin-bottom: 2.5rem;\n    max-width: 500px;\n}\n\n.hero-actions {\n    display: flex;\n    gap: 1rem;\n}\n\n.image-mockup {\n    position: relative;\n    border-radius: 12px;\n    overflow: hidden;\n    animation: float 6s ease-in-out infinite;\n}\n\n.image-mockup::after {\n    content: '';\n    position: absolute;\n    inset: 0;\n    box-shadow: inset 0 0 0 1px var(--glass-border);\n    border-radius: 12px;\n    pointer-events: none;\n}\n\n/* .floating-animation {\n    animation: float 6s ease-in-out infinite;\n} */\n\n@keyframes float {\n    0% {\n        transform: translateY(0px);\n    }\n\n    50% {\n        transform: translateY(-20px);\n    }\n\n    100% {\n        transform: translateY(0px);\n    }\n}\n\n/* --- About Section --- */\n.about-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 4rem;\n}\n\n.lead {\n    font-size: 1.5rem;\n    font-family: var(--font-heading);\n    color: var(--cyan-neon);\n    margin-bottom: 1.5rem;\n}\n\n.about-features {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 1.5rem;\n}\n\n/* --- Robotics Section --- */\n.robotics-showcase {\n    display: grid;\n    grid-template-columns: 1.2fr 1fr;\n    gap: 4rem;\n    align-items: center;\n}\n\n.capability-list li {\n    margin-bottom: 1rem;\n    padding-bottom: 1rem;\n    border-bottom: 1px solid var(--glass-border);\n    color: var(--cyber-silver);\n}\n\n.capability-list li:last-child {\n    border-bottom: none;\n}\n\n.accessories-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 2rem;\n}\n\n/* --- Applications Section --- */\n.applications-grid {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 2rem;\n}\n\n.app-card {\n    padding: 0;\n    overflow: hidden;\n    display: flex;\n    flex-direction: column;\n}\n\n.app-visual {\n    position: relative;\n    height: 250px;\n}\n\n.app-heading {\n    padding: 1.5rem 2rem 0;\n}\n\n.app-heading h3 {\n    margin-bottom: 0;\n}\n\n.robot-event-inset {\n    position: absolute;\n    right: 1.25rem;\n    bottom: 1.25rem;\n    width: 160px;\n    border: 1px solid rgba(0, 240, 255, 0.5);\n    border-radius: 10px;\n    overflow: hidden;\n    background: rgba(8, 10, 15, 0.9);\n    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);\n}\n\n.app-visual .robot-event-inset img {\n    height: 118px;\n    width: 100%;\n    object-fit: cover;\n    transition: none;\n}\n\n.robot-event-inset span {\n    display: block;\n    padding: 0.55rem 0.5rem;\n    color: var(--cyan-neon);\n    font-family: var(--font-heading);\n    font-size: 0.7rem;\n    font-weight: 600;\n    letter-spacing: 0.04em;\n    line-height: 1.2;\n    text-align: center;\n}\n\n.robotics-video-section {\n    margin-top: 6rem;\n}\n\n.robotics-video-section .section-header {\n    margin-bottom: 2rem;\n}\n\n.robotics-video-frame {\n    max-width: 980px;\n    margin: 0 auto;\n    overflow: hidden;\n    border: 1px solid rgba(0, 240, 255, 0.25);\n    border-radius: 12px;\n    background: #05070b;\n    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);\n}\n\n.robotics-video-frame video {\n    display: block;\n    width: 100%;\n    aspect-ratio: 16 / 9;\n    object-fit: cover;\n}\n\n.video-pending-note {\n    padding: 0.75rem 1rem;\n    color: var(--text-muted);\n    font-size: 0.8rem;\n    text-align: center;\n    border-top: 1px solid var(--glass-border);\n}\n\n.app-visual img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    transition: var(--transition-smooth);\n}\n\n.app-card:hover .app-visual > img {\n    transform: scale(1.05);\n}\n\n.app-label {\n    position: absolute;\n    top: 1rem;\n    right: 1rem;\n    background: rgba(0, 0, 0, 0.7);\n    color: var(--cyber-silver);\n    font-size: 0.75rem;\n    padding: 0.25rem 0.75rem;\n    border-radius: 4px;\n    border: 1px solid var(--glass-border);\n    backdrop-filter: blur(4px);\n}\n\n.app-content {\n    padding: 2rem;\n}\n\n/* --- Process Section --- */\n.process-steps {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 2rem;\n}\n\n.step {\n    position: relative;\n    padding-top: 2rem;\n    border-top: 1px solid var(--glass-border);\n}\n\n.step::before {\n    content: '';\n    position: absolute;\n    top: -2px;\n    left: 0;\n    width: 30px;\n    height: 3px;\n    background: var(--cyan-neon);\n    box-shadow: 0 0 10px var(--cyan-glow);\n}\n\n.step-number {\n    font-family: var(--font-heading);\n    font-size: 3rem;\n    font-weight: 800;\n    color: rgba(255, 255, 255, 0.05);\n    position: absolute;\n    top: -1rem;\n    right: 0;\n    line-height: 1;\n}\n\n/* --- Why Us Section --- */\n.why-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 4rem;\n    align-items: center;\n}\n\n.why-list h4 {\n    color: var(--cyan-neon);\n    margin-bottom: 0.25rem;\n}\n\n.why-list li {\n    margin-bottom: 1.5rem;\n}\n\n.why-cards {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 1rem;\n}\n\n.why-card.glass-panel {\n    padding: 1.35rem;\n}\n\n.why-card:hover {\n    transform: translateY(-3px);\n}\n\n.why-card h3 {\n    font-size: 1.05rem;\n    margin: 0.75rem 0 0.4rem;\n}\n\n.why-card p {\n    color: var(--text-muted);\n    font-size: 0.85rem;\n    line-height: 1.5;\n}\n\n.why-icon {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    width: 2rem;\n    height: 2rem;\n    border: 1px solid rgba(0, 240, 255, 0.35);\n    border-radius: 6px;\n    color: var(--cyan-neon);\n}\n\n.why-icon svg {\n    width: 1.2rem;\n    height: 1.2rem;\n    fill: none;\n    stroke: currentColor;\n    stroke-width: 1.5;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n}\n\n.footer-brand small {\n    color: var(--text-muted);\n    font-size: 0.7em;\n    font-weight: 500;\n}\n\n/* --- Showcase Section --- */\n.showcase-gallery {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 2rem;\n}\n\n.gallery-item {\n    padding: 0;\n    position: relative;\n    border-radius: 8px;\n    overflow: hidden;\n    height: 300px;\n}\n\n.gallery-item img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    transition: transform 0.5s ease;\n}\n\n.gallery-item:hover img {\n    transform: scale(1.05);\n}\n\n.gallery-overlay {\n    position: absolute;\n    inset: 0;\n    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 50%);\n    display: flex;\n    align-items: flex-end;\n    padding: 1.5rem;\n}\n\n.gallery-overlay span {\n    font-family: var(--font-heading);\n    font-size: 1.25rem;\n    font-weight: 600;\n}\n\n/* --- CTA Section --- */\n.cta-card {\n    padding: 5rem 2rem;\n    max-width: 800px;\n    margin: 0 auto;\n    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(0, 240, 255, 0.05) 100%);\n    border: 1px solid rgba(0, 240, 255, 0.2);\n}\n\n.cta-buttons {\n    display: flex;\n    gap: 1rem;\n    justify-content: center;\n    margin-top: 2rem;\n}\n\n/* --- Contact Section --- */\n.contact-cards {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 1.5rem;\n    margin-top: 0;\n}\n\n.contact-card {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    padding: 2rem 1.75rem;\n    border-radius: 10px;\n    transition: var(--transition-smooth);\n}\n\n.contact-card h4 {\n    font-size: 1rem;\n    font-weight: 700;\n    color: var(--text-light);\n    margin-bottom: 0.25rem;\n}\n\n.contact-card-icon {\n    width: 52px;\n    height: 52px;\n    border-radius: 10px;\n    background: rgba(37, 99, 235, 0.12);\n    border: 1px solid rgba(37, 99, 235, 0.25);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: var(--electric-blue);\n    margin-bottom: 1rem;\n    flex-shrink: 0;\n}\n\n.contact-card-icon.whatsapp-icon {\n    background: rgba(37, 211, 102, 0.12);\n    border-color: rgba(37, 211, 102, 0.25);\n    color: #25D366;\n}\n\n.text-muted-sm {\n    font-size: 0.875rem;\n    color: var(--text-muted);\n    line-height: 1.7;\n}\n\n.highlight-cyan-sm {\n    font-size: 0.9rem;\n    font-weight: 600;\n    color: var(--cyan-neon);\n    letter-spacing: 0.05em;\n}\n\n.contact-email-link {\n    display: block;\n    font-size: 0.825rem;\n    color: var(--text-muted);\n    margin-bottom: 0.35rem;\n    word-break: break-word;\n    transition: var(--transition-fast);\n}\n\n.contact-email-link:hover {\n    color: var(--cyan-neon);\n}\n\n.contact-card-cta {\n    background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, rgba(0, 240, 255, 0.04) 100%);\n    border-color: rgba(37, 211, 102, 0.2) !important;\n    justify-content: space-between;\n}\n\n.btn-whatsapp {\n    display: inline-block;\n    padding: 0.65rem 1.25rem;\n    border-radius: 6px;\n    font-family: var(--font-heading);\n    font-weight: 600;\n    font-size: 0.8rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    background-color: #25D366;\n    color: white;\n    border: none;\n    cursor: pointer;\n    transition: var(--transition-smooth);\n    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);\n    margin-top: auto;\n    align-self: flex-start;\n}\n\n.btn-whatsapp:hover {\n    background-color: #1ebe5b;\n    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);\n    transform: translateY(-2px);\n}\n\n.info-block {\n    margin-bottom: 2rem;\n}\n\n.info-block h4 {\n    margin-bottom: 0.5rem;\n    color: var(--cyber-silver);\n}\n\n.info-block a {\n    display: block;\n    margin-bottom: 0.25rem;\n}\n\n.info-block a:hover {\n    color: var(--cyan-neon);\n}\n\n.form-group {\n    margin-bottom: 1.5rem;\n}\n\n.form-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 1rem;\n}\n\nlabel {\n    display: block;\n    margin-bottom: 0.5rem;\n    font-size: 0.875rem;\n    color: var(--cyber-silver);\n}\n\ninput,\nselect,\ntextarea {\n    width: 100%;\n    padding: 0.75rem 1rem;\n    background: rgba(0, 0, 0, 0.2);\n    border: 1px solid var(--glass-border);\n    border-radius: 4px;\n    color: var(--text-light);\n    font-family: var(--font-sans);\n    transition: var(--transition-fast);\n}\n\ninput:focus,\nselect:focus,\ntextarea:focus {\n    outline: none;\n    border-color: var(--cyan-neon);\n    box-shadow: 0 0 0 1px var(--cyan-neon);\n}\n\n/* --- Scroll to Top Button --- */\n.scroll-to-top {\n    position: fixed;\n    bottom: 6.5rem;\n    /* Positioned above WhatsApp button */\n    right: 2rem;\n    background-color: var(--glass-bg);\n    backdrop-filter: blur(12px);\n    -webkit-backdrop-filter: blur(12px);\n    border: 1px solid var(--glass-border);\n    color: var(--cyan-neon);\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    box-shadow: var(--glass-shadow);\n    z-index: 100;\n    cursor: pointer;\n    opacity: 0;\n    visibility: hidden;\n    transform: translateY(20px);\n    transition: var(--transition-smooth);\n}\n\n.scroll-to-top.show {\n    opacity: 1;\n    visibility: visible;\n    transform: translateY(0);\n}\n\n.scroll-to-top:hover {\n    background-color: rgba(0, 240, 255, 0.1);\n    border-color: var(--cyan-neon);\n    transform: translateY(-5px);\n}\n\n/* --- WhatsApp Floating Button --- */\n.floating-whatsapp {\n    position: fixed;\n    bottom: 2rem;\n    right: 2rem;\n    background-color: #25D366;\n    color: white;\n    width: 60px;\n    height: 60px;\n    border-radius: 50%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);\n    z-index: 100;\n    transition: var(--transition-smooth);\n}\n\n.floating-whatsapp:hover {\n    transform: scale(1.1);\n    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);\n}\n\n/* --- Footer --- */\n.footer {\n    border-top: 1px solid var(--glass-border);\n    padding: 4rem 0 2rem;\n}\n\n.footer-grid {\n    display: grid;\n    grid-template-columns: 2fr 1fr 1fr;\n    gap: 4rem;\n    margin-bottom: 3rem;\n}\n\n.footer-links nav {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n}\n\n.footer-links a:hover {\n    color: var(--cyan-neon);\n}\n\n.footer-emails a {\n    display: block;\n    color: var(--text-muted);\n    font-size: 0.875rem;\n}\n\n.footer-emails a:hover {\n    color: var(--text-light);\n}\n\n.footer-phone {\n    display: inline-block;\n    margin-top: 0.75rem;\n    color: var(--cyan-neon);\n}\n\n.footer-bottom {\n    border-top: 1px solid var(--glass-border);\n    padding-top: 2rem;\n    font-size: 0.875rem;\n    color: var(--text-muted);\n}\n\n/* --- Scroll Reveal Classes --- */\n.reveal-on-scroll {\n    opacity: 0;\n    transform: translateY(30px);\n    transition: opacity 0.8s ease-out, transform 0.8s ease-out;\n}\n\n.reveal-on-scroll.is-visible {\n    opacity: 1;\n    transform: translateY(0);\n}\n\n.delay-1 {\n    transition-delay: 0.1s;\n}\n\n.delay-2 {\n    transition-delay: 0.2s;\n}\n\n.delay-3 {\n    transition-delay: 0.3s;\n}\n\n/* =====================================================\n   RESPONSIVE DESIGN \u2014 Full Breakpoint System\n   ===================================================== */\n\n/* --- NAV COLLAPSE: 1199px and below --- */\n@media (max-width: 1199px) {\n\n    /* Hide desktop nav links & CTA button */\n    .nav-links {\n        display: none;\n        flex-direction: column;\n        position: absolute;\n        top: 100%;\n        left: 0;\n        width: 100%;\n        background-color: var(--deep-navy);\n        padding: 1.5rem 2rem;\n        border-bottom: 1px solid var(--glass-border);\n        gap: 1.25rem;\n        z-index: 999;\n    }\n\n    .nav-links.active {\n        display: flex;\n    }\n\n    .nav-cta {\n        display: none;\n        position: absolute;\n        top: calc(100% + 300px);\n        left: 2rem;\n        z-index: 1000;\n    }\n\n    .nav-cta.active {\n        display: block;\n    }\n\n    /* Show hamburger */\n    .mobile-menu-toggle {\n        display: flex;\n        z-index: 1001;\n    }\n}\n\n/* --- XL: 1280px and below --- */\n@media (max-width: 1280px) {\n    .container {\n        width: 92%;\n    }\n\n    .hero-title {\n        font-size: 3.25rem;\n    }\n\n    .footer-grid {\n        gap: 3rem;\n    }\n}\n\n/* --- LG: 1024px and below --- */\n@media (max-width: 1024px) {\n    .container {\n        width: 93%;\n    }\n\n    /* Typography */\n    .hero-title {\n        font-size: 2.75rem;\n    }\n\n    .section-title {\n        font-size: 2.25rem;\n    }\n\n    .lead {\n        font-size: 1.35rem;\n    }\n\n    /* Sections */\n    .section-padding {\n        padding: 5rem 0;\n    }\n\n    /* Navbar */\n    .logo a {\n        font-size: 1.25rem;\n    }\n\n    .nav-links {\n        gap: 1.5rem;\n    }\n\n    /* Grids */\n    .robotics-showcase {\n        grid-template-columns: 1fr;\n        gap: 3rem;\n    }\n\n    .accessories-grid {\n        grid-template-columns: repeat(2, 1fr);\n        gap: 1.5rem;\n    }\n\n    .process-steps {\n        grid-template-columns: repeat(2, 1fr);\n        gap: 2rem;\n    }\n\n    .why-grid {\n        grid-template-columns: 1fr;\n        gap: 2.5rem;\n    }\n\n    .about-features {\n        grid-template-columns: repeat(2, 1fr);\n    }\n\n    .footer-grid {\n        grid-template-columns: 1fr 1fr;\n        gap: 2rem;\n    }\n\n    .contact-cards {\n        grid-template-columns: repeat(2, 1fr);\n        gap: 1.25rem;\n    }\n}\n\n/* --- MD: 768px and below --- */\n@media (max-width: 768px) {\n    .container {\n        width: 94%;\n    }\n\n    /* Typography */\n    .hero-title {\n        font-size: 2.25rem;\n        line-height: 1.15;\n    }\n\n    .hero-subtitle {\n        font-size: 1.05rem;\n        max-width: 100%;\n    }\n\n    .section-title {\n        font-size: 1.875rem;\n    }\n\n    .section-desc {\n        font-size: 1rem;\n    }\n\n    .lead {\n        font-size: 1.2rem;\n    }\n\n    /* Sections */\n    .section-padding {\n        padding: 4rem 0;\n    }\n\n    .section-header {\n        margin-bottom: 2.5rem;\n    }\n\n    .section-header.center {\n        margin-bottom: 2.5rem;\n    }\n\n    /* CTA card */\n    .cta-card {\n        padding: 3rem 1.5rem;\n    }\n\n    .cta-buttons {\n        flex-direction: column;\n        align-items: stretch;\n        gap: 0.75rem;\n    }\n\n    .cta-buttons .btn {\n        text-align: center;\n    }\n\n    /* Navbar mobile menu handled at 1199px breakpoint */\n\n    /* Hero */\n    .hero {\n        padding-top: 6rem;\n        min-height: auto;\n        padding-bottom: 4rem;\n    }\n\n    .hero-container {\n        grid-template-columns: 1fr;\n        gap: 2.5rem;\n        text-align: center;\n    }\n\n    .hero-actions {\n        justify-content: center;\n        flex-wrap: wrap;\n        gap: 0.75rem;\n    }\n\n    .hero-visual {\n        max-width: 480px;\n        margin: 0 auto;\n    }\n\n    /* About */\n    .about-grid {\n        grid-template-columns: 1fr;\n        gap: 2.5rem;\n    }\n\n    .about-features {\n        grid-template-columns: repeat(2, 1fr);\n        gap: 1rem;\n    }\n\n    .feature-card.glass-panel {\n        padding: 1.25rem;\n    }\n\n    /* Robotics */\n    .robotics-showcase {\n        grid-template-columns: 1fr;\n        gap: 2rem;\n    }\n\n    .accessories-grid {\n        grid-template-columns: 1fr;\n        gap: 1rem;\n    }\n\n    .accessory-card.glass-panel {\n        padding: 1.25rem;\n    }\n\n    /* Applications \u2014 full width on mobile */\n    .applications-grid {\n        grid-template-columns: 1fr;\n        gap: 1.5rem;\n    }\n\n    .app-card {\n        width: 100%;\n    }\n\n    .app-visual {\n        height: 220px;\n    }\n\n    .app-content {\n        padding: 1.5rem;\n    }\n\n    /* Process */\n    .process-steps {\n        grid-template-columns: repeat(2, 1fr);\n        gap: 1.5rem 2rem;\n    }\n\n    /* Why Us */\n    .why-grid {\n        grid-template-columns: 1fr;\n        gap: 2rem;\n    }\n\n    .why-visual {\n        display: none;\n    }\n\n    .why-content .section-title {\n        margin-bottom: 2rem;\n    }\n\n    .why-cards {\n        grid-template-columns: repeat(2, 1fr);\n    }\n\n    /* Showcase \u2014 full width on mobile */\n    .showcase-gallery {\n        grid-template-columns: 1fr;\n        gap: 1rem;\n    }\n\n    .gallery-item {\n        height: 240px;\n    }\n\n    /* Contact cards \u2014 2 col on tablet */\n    .contact-cards {\n        grid-template-columns: repeat(2, 1fr);\n        gap: 1rem;\n    }\n\n    /* Footer */\n    .about-grid,\n    .contact-grid,\n    .footer-grid {\n        grid-template-columns: 1fr;\n        gap: 2rem;\n    }\n\n    .footer {\n        padding: 3rem 0 1.5rem;\n    }\n\n    .footer-grid {\n        margin-bottom: 2rem;\n    }\n}\n\n/* --- SM: 480px and below --- */\n@media (max-width: 575px) {\n    .container {\n        width: 95%;\n    }\n\n    /* Typography */\n    .hero-title {\n        font-size: 1.875rem;\n    }\n\n    .hero-subtitle {\n        font-size: 1rem;\n    }\n\n    .section-title {\n        font-size: 1.625rem;\n    }\n\n    .section-desc {\n        font-size: 0.95rem;\n    }\n\n    .lead {\n        font-size: 1.1rem;\n    }\n\n    .logo a {\n        font-size: 1.1rem;\n    }\n\n    /* Sections */\n    .section-padding {\n        padding: 3rem 0;\n    }\n\n    /* Hero */\n    .hero {\n        padding-top: 5.5rem;\n        padding-bottom: 3rem;\n    }\n\n    .hero-actions {\n        flex-direction: column;\n        align-items: center;\n        gap: 0.75rem;\n    }\n\n    .hero-actions .btn {\n        width: 100%;\n        max-width: 280px;\n        text-align: center;\n    }\n\n    /* Buttons */\n    .btn {\n        padding: 0.7rem 1.25rem;\n        font-size: 0.8rem;\n    }\n\n    .floating-whatsapp {\n        width: 52px;\n        height: 52px;\n        bottom: 1.25rem;\n        right: 1.25rem;\n    }\n\n    /* About features \u2014 1 col on small screens */\n    .about-features {\n        grid-template-columns: 1fr;\n        gap: 0.75rem;\n    }\n\n    .feature-card.glass-panel {\n        padding: 1rem;\n    }\n\n    /* Applications */\n    .app-visual {\n        height: 200px;\n    }\n\n    .app-content {\n        padding: 1.25rem;\n    }\n\n    .app-heading {\n        padding: 1.25rem 1.25rem 0;\n    }\n\n    .app-visual .robot-event-inset {\n        width: 105px;\n    }\n\n    .app-visual .robot-event-inset img {\n        height: 76px;\n    }\n\n    .robotics-video-section {\n        margin-top: 4rem;\n    }\n\n    .why-cards {\n        grid-template-columns: 1fr;\n    }\n\n    /* Process steps \u2014 stack vertically */\n    .process-steps {\n        grid-template-columns: 1fr;\n        gap: 2rem;\n    }\n\n    /* Contact cards \u2014 1 col on mobile */\n    .contact-cards {\n        grid-template-columns: 1fr;\n        gap: 1rem;\n    }\n\n    .contact-card {\n        padding: 1.5rem 1.25rem;\n    }\n\n    .btn-whatsapp {\n        align-self: stretch;\n        text-align: center;\n    }\n\n    /* Accessories */\n    .accessories-grid {\n        grid-template-columns: 1fr;\n    }\n\n    /* Showcase */\n    .gallery-item {\n        height: 200px;\n    }\n\n    /* CTA */\n    .cta-card {\n        padding: 2.5rem 1.25rem;\n    }\n\n    .cta-card h2 {\n        font-size: 1.5rem;\n    }\n\n    /* Contact */\n    .info-block {\n        margin-bottom: 1.5rem;\n    }\n\n    /* Footer */\n    .footer-grid {\n        grid-template-columns: 1fr;\n        gap: 1.5rem;\n    }\n\n    .footer-brand h3 {\n        font-size: 1.25rem;\n    }\n}\n\n/* --- XS: 360px and below --- */\n@media (max-width: 360px) {\n    .container {\n        width: 96%;\n    }\n\n    /* Typography */\n    .hero-title {\n        font-size: 1.625rem;\n    }\n\n    .section-title {\n        font-size: 1.5rem;\n    }\n\n    /* Sections */\n    .section-padding {\n        padding: 2.5rem 0;\n    }\n\n    /* Hero */\n    .hero {\n        padding-top: 5rem;\n    }\n\n    .hero-actions .btn {\n        max-width: 100%;\n    }\n\n    /* Navbar logo */\n    .logo a {\n        font-size: 1rem;\n        letter-spacing: -0.03em;\n    }\n\n    /* Buttons */\n    .btn {\n        padding: 0.65rem 1rem;\n        font-size: 0.75rem;\n        letter-spacing: 0.08em;\n    }\n\n    .floating-whatsapp {\n        width: 48px;\n        height: 48px;\n        bottom: 1rem;\n        right: 1rem;\n    }\n\n    /* Glass panel padding reduction */\n    .glass-panel {\n        padding: 1.25rem;\n    }\n\n    .cta-card {\n        padding: 2rem 1rem;\n    }\n}</style>"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "dbfa25f",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "69580c6",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 50
+                    },
+                    "elements": [
+                        {
+                            "id": "de9d6b7",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "The Future of Humanoid Robotics is Here",
+                                "header_size": "h1"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "48d23ab",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Providing premium humanoid robotics solutions for corporate events, product launches, expos, education, and exclusive interactive experiences."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "fa22dfd",
+                            "elType": "widget",
+                            "widgetType": "button",
+                            "settings": {
+                                "text": "Explore Our Robotics",
+                                "link": {
+                                    "url": "#robotics"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "ba012a9",
+                            "elType": "widget",
+                            "widgetType": "button",
+                            "settings": {
+                                "text": "Contact Us",
+                                "link": {
+                                    "url": "#contact"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "8cb30c1",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 50
+                    },
+                    "elements": [
+                        {
+                            "id": "1e85a6d",
+                            "elType": "widget",
+                            "widgetType": "image",
+                            "settings": {
+                                "image": {
+                                    "url": "img/hero.webp"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "d03edae",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "190f1f0",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "d062988",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "SSM: 003884766-K"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "8400af1",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "About AURA HUMANOID TECH",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "23c7596",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "5ac1e41",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 50
+                    },
+                    "elements": [
+                        {
+                            "id": "af0d317",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "<p>We are a technology-focused business specializing in humanoid robotics and innovative robotic experiences.</p><p>At AURA HUMANOID TECH, we bring next-generation robotic capabilities into real-world environments. Our focus is on delivering premium service, professional execution, and undeniable reliability for our corporate clients.</p><p>We believe in the power of interactive technology to transform events, education, and brand experiences, ensuring that every deployment is executed with precision and corporate readiness.</p>"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "8ee3411",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 50
+                    },
+                    "elements": [
+                        {
+                            "id": "1fc99d7",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Innovation",
+                                "description_text": "Deploying the latest in humanoid mobility and interaction."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "121d272",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Professionalism",
+                                "description_text": "Corporate-ready solutions tailored to your brand."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "9d81648",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Reliability",
+                                "description_text": "Flawless execution with dedicated technical support."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "3140fa2",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Premium Service",
+                                "description_text": "End-to-end management of your robotic experience."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "b15ee75",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "65652b6",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "ab74cef",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Flagship Robotics",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "9cd1240",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Experience the capabilities of the Aura Humanoid Robot."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "122e1c9",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "9c29921",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 50
+                    },
+                    "elements": [
+                        {
+                            "id": "757aeef",
+                            "elType": "widget",
+                            "widgetType": "image",
+                            "settings": {
+                                "image": {
+                                    "url": "img/flagship.jpeg"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "3d4e249",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 50
+                    },
+                    "elements": [
+                        {
+                            "id": "edba7b5",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Aura Humanoid Robot",
+                                "header_size": "h3"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "b8ac650",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Our flagship robotic platform offers unparalleled mobility, interaction, and stage presence for any premium environment."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "4f0482f",
+                            "elType": "widget",
+                            "widgetType": "icon-list",
+                            "settings": {
+                                "icon_list": [
+                                    {
+                                        "text": "Humanoid Movement: Fluid, dynamic articulation that captivates audiences."
+                                    },
+                                    {
+                                        "text": "Intelligent Mobility: Navigates complex environments and stages seamlessly."
+                                    },
+                                    {
+                                        "text": "Interactive Demonstrations: Engaging interactions for guests and attendees."
+                                    },
+                                    {
+                                        "text": "Stage Interaction: Perfect for keynotes, product unveils, and performances."
+                                    }
+                                ]
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "7b66e2a",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "ce79fd2",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "5413364",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Professional Event Infrastructure",
+                                "header_size": "h3"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "eee72d7",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "23a0286",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 33
+                    },
+                    "elements": [
+                        {
+                            "id": "9c69adf",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "High-Capacity Batteries",
+                                "description_text": "Ensuring extended operation and uninterrupted event usage."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "72ddd38",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 33
+                    },
+                    "elements": [
+                        {
+                            "id": "c085a94",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Fast Chargers",
+                                "description_text": "Delivering efficient operational turnaround during full-day schedules."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "74e47ae",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 33
+                    },
+                    "elements": [
+                        {
+                            "id": "d97e214",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Heavy-Duty Transit Flight Case",
+                                "description_text": "Guaranteeing safe transportation and professional event logistics."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "be3e914",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "5250a2e",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "4722db4",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Experience the Future of Humanoid Robotics",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "237a269",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Discover how humanoid robots can engage, entertain, assist, and interact with people in real-world environments."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "2f0982d",
+                            "elType": "widget",
+                            "widgetType": "video",
+                            "settings": {
+                                "youtube_url": "video/aura-robot-demo.mp4"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "ea1a561",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "ea4ded8",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "91f8e09",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Applications & Experiences",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "91083ca",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Explore what we can create for your next event with our humanoid robotics."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "a3cdc5c",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "2aff002",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "0dcae0e",
+                            "elType": "widget",
+                            "widgetType": "image-box",
+                            "settings": {
+                                "image": {
+                                    "url": "img/corporate-launch.webp"
+                                },
+                                "title_text": "Corporate Launches",
+                                "description_text": "Elevate your brand with striking robot appearances for product launches, brand activations, corporate ceremonies, and technology showcases."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "5270739",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "670beb3",
+                            "elType": "widget",
+                            "widgetType": "image-box",
+                            "settings": {
+                                "image": {
+                                    "url": "img/expo.webp"
+                                },
+                                "title_text": "Expos & Trade Fairs",
+                                "description_text": "Create a magnetic attraction at exhibition booths and trade fairs to drive brand engagement, visitor interaction, and technology demonstrations."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "3f8f44e",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "b59c022",
+                            "elType": "widget",
+                            "widgetType": "image-box",
+                            "settings": {
+                                "image": {
+                                    "url": "img/stem-edu.webp"
+                                },
+                                "title_text": "STEM & Education",
+                                "description_text": "Inspire the next generation through interactive applications for schools, colleges, STEM workshops, and technology awareness programs."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "b891e4c",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "7dce94d",
+                            "elType": "widget",
+                            "widgetType": "image-box",
+                            "settings": {
+                                "image": {
+                                    "url": "img/wedding-robot.webp"
+                                },
+                                "title_text": "VIP Weddings & Private Events",
+                                "description_text": "Deliver unforgettable premium experiences like an exclusive event greeter, ring bearer, tray bearer, and a highly special entrance experience."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "2e552a6",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "6d7c965",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "b9e05da",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "How It Works",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "327da59",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "A seamless process to integrate robotics into your event."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "75e4718",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "495b0ec",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "4547378",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "01 Discuss",
+                                "description_text": "Tell us about your event, venue, audience, and specific requirements."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "851113e",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "74378c7",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "02 Plan",
+                                "description_text": "We design and propose the appropriate robotic experience tailored for your event."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "d3b8245",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "3b5fc38",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "03 Deploy",
+                                "description_text": "Our professional team prepares, transports, and coordinates the entire robotic setup."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "ca44d98",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "2a4ae14",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "04 Experience",
+                                "description_text": "Your guests enjoy a flawless and memorable humanoid robotics interaction."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "46b2039",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "1e86c66",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 50
+                    },
+                    "elements": [
+                        {
+                            "id": "3d159a8",
+                            "elType": "widget",
+                            "widgetType": "image",
+                            "settings": {
+                                "image": {
+                                    "url": "img/why-aura.jpeg"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "00848ec",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Trust & Excellence",
+                                "header_size": "h3"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "0c6f376",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Setting the standard for corporate robotic deployments in Malaysia."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "4fb175e",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 50
+                    },
+                    "elements": [
+                        {
+                            "id": "eb74bf5",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Why AURA HUMANOID TECH",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "031bfaf",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Innovation",
+                                "description_text": "Next-generation humanoid robotics for real-world experiences."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "6d30a86",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Advanced Robotics",
+                                "description_text": "Interactive movement and presence designed to engage audiences."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "39334ee",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Safety & Reliability",
+                                "description_text": "Thoughtful planning and technical readiness for every deployment."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "2161d18",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Premium Experience",
+                                "description_text": "Polished presentations for corporate and private environments."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "78e25fc",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Custom Solutions",
+                                "description_text": "Flexible concepts shaped around your venue, audience, and goals."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "d356cf3",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Future-Ready",
+                                "description_text": "Technology experiences that make a lasting impression."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "3520dbe",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "a805dfd",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "cd47f9c",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Visual Showcase",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "e95bf7d",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Conceptualizing the future of live events."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "03b31c4",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "0a27890",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 33
+                    },
+                    "elements": [
+                        {
+                            "id": "dbaa6e4",
+                            "elType": "widget",
+                            "widgetType": "image",
+                            "settings": {
+                                "image": {
+                                    "url": "img/corporate-stage.webp"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "e90f2b3",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 33
+                    },
+                    "elements": [
+                        {
+                            "id": "29100dd",
+                            "elType": "widget",
+                            "widgetType": "image",
+                            "settings": {
+                                "image": {
+                                    "url": "img/exhibition.webp"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "1f0a811",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 33
+                    },
+                    "elements": [
+                        {
+                            "id": "0085357",
+                            "elType": "widget",
+                            "widgetType": "image",
+                            "settings": {
+                                "image": {
+                                    "url": "img/flagship.jpeg"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "4846416",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "e8e87e1",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "597f20d",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Ready to Bring Humanoid Robotics to Your Event?",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "b97af65",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Whether you are planning a corporate launch, exhibition, educational workshop, or a premium private event, talk to our team about creating a robotic experience tailored to your exact requirements."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "dbfd229",
+                            "elType": "widget",
+                            "widgetType": "button",
+                            "settings": {
+                                "text": "WhatsApp Us",
+                                "link": {
+                                    "url": "https://api.whatsapp.com/send/?phone=60102090179&text=Hello%2C%20I%20am%20interested%20in%20your%20Humanoid%20Robotics%20services."
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "1e4e898",
+                            "elType": "widget",
+                            "widgetType": "button",
+                            "settings": {
+                                "text": "Request a Consultation",
+                                "link": {
+                                    "url": "#contact"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "a16411f",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "c0781f5",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 100
+                    },
+                    "elements": [
+                        {
+                            "id": "07a9b52",
+                            "elType": "widget",
+                            "widgetType": "heading",
+                            "settings": {
+                                "title": "Get In Touch",
+                                "header_size": "h2"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        },
+                        {
+                            "id": "6eb23b3",
+                            "elType": "widget",
+                            "widgetType": "text-editor",
+                            "settings": {
+                                "editor": "Connect with our corporate team to discuss how AURA HUMANOID TECH can elevate your next engagement."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        },
+        {
+            "id": "a488b83",
+            "elType": "section",
+            "settings": {},
+            "elements": [
+                {
+                    "id": "ea9d6e6",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "28f33f1",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "AURA HUMANOID TECH",
+                                "description_text": "SSM Registration: 003884766-K\nMalaysia's premium humanoid robotics solutions provider."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "a5b7a17",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "7aecd01",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Address",
+                                "description_text": "No. 1, Jalan Anggerik Tainia AW 31/AW, Kota Kemuning, 40460 Shah Alam, Selangor, Malaysia."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "8db507f",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "c1bead8",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "Emails",
+                                "description_text": "info@aurahumanoidtech.com\nsales@aurahumanoidtech.com\nadmin@aurahumanoidtech.com"
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                },
+                {
+                    "id": "cfcaf16",
+                    "elType": "column",
+                    "settings": {
+                        "_column_size": 25
+                    },
+                    "elements": [
+                        {
+                            "id": "0d623b8",
+                            "elType": "widget",
+                            "widgetType": "icon-box",
+                            "settings": {
+                                "title_text": "WhatsApp",
+                                "description_text": "Reach us directly for fast enquiries and consultations."
+                            },
+                            "elements": [],
+                            "isInner": false
+                        }
+                    ],
+                    "isInner": false
+                }
+            ],
+            "isInner": false
+        }
+    ]
+}
